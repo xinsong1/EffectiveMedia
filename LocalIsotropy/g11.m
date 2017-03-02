@@ -1,0 +1,9 @@
+function z = g11(lambda, mu, eta)
+% Thomas H. Jordan 2011/03
+% Closed form of spherically averaged STG component g11 = G1111
+a = eta^2 - 1;
+% if a <= 0, error('eta <= 1'), end
+z = -(1/(8*mu*(lambda + 2*mu)))*(3*(lambda + 2*mu)*(a + 1)*(tint2(a) - tint4(a))...
+    + 3*mu*(tint0(a) - tint2(a)) - 3*mu*(tint2(a) - tint4(a))...
+    + a*(lambda + 2*mu)*(tint2(a) - tint4(a))...
+    + (lambda + 2*mu)*(tint0(a) - tint2(a)));
